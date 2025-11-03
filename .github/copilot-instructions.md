@@ -138,6 +138,21 @@ Required environment variables (see `.env.example` or README):
 - **Error Handling**: Provide clear error messages to users
 - **Security**: Never commit API keys or sensitive data
 
+## Security & EU CRA Compliance
+
+- **AI prompt hygiene**: Never paste secrets, credentials, or API keys into prompts.
+- **Human review**: Treat all AI output as untrusted; require human maintainer review before merge.
+- **No AI for crypto/auth**: Do not generate cryptography, authentication, or authorization logic with Copilot unless explicitly approved by a security maintainer.
+- **Licensing/provenance**: For long suggestions, verify license and provenance before use.
+- **Dependency scanning**: Run vulnerability scanning (e.g., OSV) and fix HIGH/CRITICAL findings before merge.
+- **Lockfiles**: Commit lockfiles and keep them up to date.
+- **Security-only updates**: When feasible, publish security updates separately from feature changes.
+- **CVD contact**: Use GitHub Security Advisories as the single point of contact for coordinated vulnerability disclosure.
+- **Security testing/reviews**: Perform regular security tests and security reviews of changes.
+- **Vulnerability disclosure**: Note fixed vulnerabilities in release notes when applicable.
+- **SBOM**: Generate a CycloneDX SBOM for releases when possible.
+- **Binary changes**: Any changes to binary files in PRs must be manually reviewed by maintainers.
+
 ## Additional Notes
 
 - The application can work without Meilisearch by entering full repository names
